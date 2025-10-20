@@ -1,0 +1,439 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>CV — Raffi Fatahilah Sudrajat (Modern Aesthetic)</title>
+
+  <!-- Google Font -->
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap" rel="stylesheet">
+
+  <style>
+    :root{
+      --bg1: #6a11cb; /* purple */
+      --bg2: #ff6fd8; /* pink */
+      --card-bg: rgba(255,255,255,0.08);
+      --glass: rgba(255,255,255,0.08);
+      --muted: rgba(255,255,255,0.85);
+      --accent: rgba(255,255,255,0.95);
+      --glass-strong: rgba(255,255,255,0.12);
+      --shadow: 0 8px 30px rgba(107, 20, 130, 0.25);
+    }
+
+    *{box-sizing:border-box}
+    html,body{height:100%}
+    body{
+      margin:0;
+      font-family:'Poppins',system-ui,Segoe UI,Roboto,Arial;
+      background:linear-gradient(135deg,var(--bg1),var(--bg2));
+      -webkit-font-smoothing:antialiased;
+      color:var(--muted);
+      display:flex;
+      align-items:center;
+      justify-content:center;
+      padding:32px;
+      gap:20px;
+    }
+
+    /* Page wrapper */
+    .cv-wrap{
+      width:100%;
+      max-width:1000px;
+      display:grid;
+      grid-template-columns: 340px 1fr;
+      gap:28px;
+      align-items:start;
+    }
+
+    /* Mobile */
+    @media (max-width:880px){
+      .cv-wrap{grid-template-columns: 1fr; padding:12px}
+      .profile-card{order: -1}
+    }
+
+    /* Profile Card (left) */
+    .profile-card{
+      background: linear-gradient(180deg, rgba(255,255,255,0.06), rgba(255,255,255,0.03));
+      border-radius:14px;
+      padding:22px;
+      box-shadow:var(--shadow);
+      border:1px solid var(--glass-strong);
+      backdrop-filter: blur(6px) saturate(120%);
+      position:relative;
+      overflow:hidden;
+    }
+
+    .profile-top{
+      display:flex;
+      gap:16px;
+      align-items:center;
+    }
+    .avatar{
+      width:110px;
+      height:110px;
+      border-radius:12px;
+      overflow:hidden;
+      flex:0 0 110px;
+      border:3px solid rgba(255,255,255,0.12);
+      transform:translateZ(0);
+      transition:transform .35s ease;
+    }
+    .avatar img{width:100%; height:100%; object-fit:cover; display:block}
+    .avatar:hover{transform:translateY(-6px) scale(1.03)}
+
+    .name{
+      flex:1;
+    }
+    .name h1{
+      margin:0;
+      font-size:20px;
+      color:var(--accent);
+      letter-spacing:0.2px;
+    }
+    .name p{margin:4px 0 0 0; font-size:13px; color:rgba(255,255,255,0.85)}
+
+    .meta{
+      margin-top:14px;
+      display:grid;
+      gap:8px;
+      font-size:13px;
+      line-height:1.3;
+    }
+    .meta-row{
+      display:flex;
+      justify-content:space-between;
+      align-items:center;
+      background:linear-gradient(90deg, rgba(255,255,255,0.02), rgba(255,255,255,0.01));
+      padding:8px 10px;
+      border-radius:8px;
+      border:1px solid rgba(255,255,255,0.03);
+    }
+    .label{font-weight:600; color:var(--accent); font-size:12px}
+    .value{color:rgba(255,255,255,0.9); font-size:13px; text-align:right}
+
+    .actions{
+      margin-top:16px;
+      display:flex;
+      gap:10px;
+    }
+    .btn{
+      cursor:pointer;
+      border:0;
+      padding:10px 14px;
+      border-radius:10px;
+      font-weight:600;
+      font-size:13px;
+      letter-spacing:0.2px;
+      transition:transform .18s ease, box-shadow .18s ease, opacity .18s;
+      display:inline-flex;
+      gap:8px;
+      align-items:center;
+      justify-content:center;
+    }
+    .btn:active{transform:translateY(1px)}
+    .btn-primary{
+      background:linear-gradient(90deg, rgba(255,255,255,0.16), rgba(255,255,255,0.06));
+      color:var(--accent);
+      border:1px solid rgba(255,255,255,0.08);
+      box-shadow:0 6px 20px rgba(80, 22, 120, 0.18);
+    }
+    .btn-ghost{
+      background:transparent;
+      color:rgba(255,255,255,0.95);
+      border:1px dashed rgba(255,255,255,0.06);
+    }
+
+    /* Right column (content) */
+    .content-card{
+      background:linear-gradient(180deg, rgba(255,255,255,0.04), rgba(255,255,255,0.02));
+      border-radius:14px;
+      padding:22px;
+      box-shadow:var(--shadow);
+      border:1px solid rgba(255,255,255,0.04);
+      backdrop-filter: blur(6px);
+      overflow:hidden;
+    }
+
+    .section{
+      margin-bottom:18px;
+      animation:fadeUp .6s ease both;
+    }
+    .section h3{
+      margin:0 0 12px 0;
+      color:var(--accent);
+      font-size:16px;
+      display:flex;
+      align-items:center;
+      gap:10px;
+    }
+    .section p{margin:0; color:rgba(255,255,255,0.9); font-size:14px; line-height:1.5}
+
+    /* education timeline */
+    .timeline{
+      display:flex;
+      flex-direction:column;
+      gap:12px;
+    }
+    .item{
+      display:flex;
+      gap:14px;
+      align-items:flex-start;
+      background:linear-gradient(90deg, rgba(255,255,255,0.02), rgba(255,255,255,0.01));
+      padding:12px;
+      border-radius:10px;
+      border:1px solid rgba(255,255,255,0.03);
+    }
+    .item .dot{
+      width:12px; height:12px; border-radius:50%;
+      background:linear-gradient(90deg, #ffd6f6, #e9b8ff);
+      flex:0 0 12px;
+      margin-top:6px;
+      box-shadow:0 4px 10px rgba(0,0,0,0.15);
+    }
+    .item .it-text{font-size:14px; color:rgba(255,255,255,0.95)}
+    .item .it-year{font-size:12px; color:rgba(255,255,255,0.75)}
+
+    /* skills/hobby grid */
+    .hobby-grid{
+      display:grid;
+      grid-template-columns: repeat(4, 1fr);
+      gap:12px;
+    }
+    @media(max-width:600px){ .hobby-grid{grid-template-columns:repeat(2,1fr)} }
+
+    .hobby{
+      height:96px;
+      border-radius:10px;
+      overflow:hidden;
+      position:relative;
+      display:flex;
+      align-items:center;
+      justify-content:center;
+      background:linear-gradient(180deg, rgba(255,255,255,0.03), rgba(255,255,255,0.01));
+      border:1px solid rgba(255,255,255,0.03);
+      cursor:pointer;
+      transition:transform .28s cubic-bezier(.2,.9,.3,1), box-shadow .28s;
+    }
+    .hobby:hover{ transform:translateY(-8px) scale(1.02); box-shadow: 0 18px 40px rgba(106,17,203,0.18) }
+    .hobby img{width:100%; height:100%; object-fit:cover; display:block; filter:grayscale(.05) contrast(1.02)}
+    .hobby .label{
+      position:absolute;
+      left:10px;
+      bottom:10px;
+      background:linear-gradient(90deg, rgba(255,255,255,0.12), rgba(255,255,255,0.06));
+      padding:6px 10px;
+      border-radius:8px;
+      font-weight:600;
+      font-size:12px;
+      color:var(--accent);
+      border:1px solid rgba(255,255,255,0.04);
+      backdrop-filter: blur(4px);
+    }
+
+    /* contact footer */
+    .contact-row{
+      display:flex;
+      gap:8px;
+      align-items:center;
+      margin-top:12px;
+      flex-wrap:wrap;
+    }
+    .chip{
+      padding:8px 10px;
+      border-radius:999px;
+      background:linear-gradient(90deg, rgba(255,255,255,0.02), rgba(255,255,255,0.01));
+      border:1px solid rgba(255,255,255,0.03);
+      font-size:13px;
+      color:rgba(255,255,255,0.95);
+      display:inline-flex;
+      gap:8px;
+      align-items:center;
+    }
+
+    /* Fancy header badge */
+    header.page-header{
+      position:fixed;
+      top:20px;
+      left:50%;
+      transform:translateX(-50%);
+      width:fit-content;
+      z-index:30;
+      backdrop-filter: blur(6px);
+      border-radius:999px;
+      padding:8px 14px;
+      background:linear-gradient(90deg, rgba(255,255,255,0.04), rgba(255,255,255,0.02));
+      border:1px solid rgba(255,255,255,0.04);
+      color:var(--accent);
+      font-weight:700;
+      letter-spacing:0.6px;
+      box-shadow:0 8px 18px rgba(0,0,0,0.18);
+    }
+
+    /* simple fadeUp */
+    @keyframes fadeUp{
+      from{opacity:0; transform:translateY(10px)}
+      to{opacity:1; transform:translateY(0)}
+    }
+
+    /* small utility */
+    .muted{color:rgba(255,255,255,0.78)}
+    .small{font-size:13px}
+  </style>
+</head>
+<body>
+
+  <header class="page-header">Curriculum Vitae — RAFFI FATAHILAH SUDRAJAT</header>
+
+  <main class="cv-wrap" role="main">
+
+    <!-- LEFT: Profile -->
+    <aside class="profile-card" aria-label="Profile card">
+      <div class="profile-top">
+        <div class="avatar" title="Foto Samsudin">
+          <!-- Gambar profile: link langsung dari sumber bebas -->
+          <img src="gambar pkkmb.jpg" alt="Profil">
+        </div>
+
+        <div class="name">
+          <h1>Raffi Fatahilah Sudrajat</h1>
+          <p class="small muted">Pria • Bandung • Islam</p>
+        </div>
+      </div>
+
+      <div class="meta" style="margin-top:14px">
+        <div class="meta-row"><span class="label">Email</span><span class="value">raffifatahilah56</span></div>
+        <div class="meta-row"><span class="label">Tanggal Lahir</span><span class="value">7 Januari 2007</span></div>
+        <div class="meta-row"><span class="label">Alamat</span><span class="value">Bandung, Indonesia</span></div>
+      </div>
+
+      <div class="actions" aria-hidden="false">
+        <button class="btn btn-primary" id="downloadBtn" title="Download as PDF / Print">
+          <!-- SVG icon (download/print) -->
+          <svg width="14" height="14" viewBox="0 0 24 24" fill="none" aria-hidden focusable="false">
+            <path d="M12 3v10" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"></path>
+            <path d="M8 7l4 4 4-4" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"></path>
+            <path d="M21 21H3" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"></path>
+          </svg>
+          Download CV
+        </button>
+
+        <button class="btn btn-ghost" id="emailBtn" title="Kirim email">
+          <svg width="14" height="14" viewBox="0 0 24 24" fill="none" aria-hidden focusable="false">
+            <path d="M3 8.5l9 6 9-6" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"></path>
+            <rect x="3" y="4" width="18" height="16" rx="2" stroke="currentColor" stroke-width="1.6" fill="none"></rect>
+          </svg>
+          Kontak
+        </button>
+      </div>
+
+      <div style="margin-top:16px">
+        <div class="section small" style="margin:0 0 8px 0">
+          <h3>Ringkasan</h3>
+          <p class="small muted">Pribadi yang ramah & disiplin dengan pengalaman akademik di Bandung. Terbiasa bekerja rapi, berkomunikasi baik, dan menyukai kegiatan komunitas</p>
+        </div>
+
+        <div class="section small" style="margin-top:8px">
+          <h3>Keahlian</h3>
+          <div style="display:flex; gap:8px; flex-wrap:wrap; margin-top:8px">
+            <span class="chip">Adaptasi cepat.</span>
+            <span class="chip">Komunikasi</span>
+          </div>
+        </div>
+      </div>
+
+    </aside>
+
+    <!-- RIGHT: Content -->
+    <section class="content-card" aria-label="Main content">
+      <!-- Education -->
+      <div class="section" id="education">
+        <h3>🎓 Pendidikan Formal</h3>
+        <div class="timeline" style="margin-top:8px">
+          <div class="item">
+            <div class="dot" aria-hidden></div>
+            <div style="flex:1">
+              <div class="it-text">Universitas Pasundan — Bandung</div>
+              <div class="it-year muted">Masih menempuh pendidikan</div>
+            </div>
+          </div>
+
+          <div class="item">
+            <div class="dot" aria-hidden></div>
+            <div style="flex:1">
+              <div class="it-text">SMAN 10 MANADO</div>
+              <div class="it-year muted">Jurusan IPS</div>
+            </div>
+          </div>
+
+          <div class="item">
+            <div class="dot" aria-hidden></div>
+            <div style="flex:1">
+              <div class="it-text">SMP-IT BAITUL QURRO TANGERANG SELATAN</div>
+              <div class="it-year muted">Pendidikan Menengah</div>
+            </div>
+          </div>
+
+          <div class="item">
+            <div class="dot" aria-hidden></div>
+            <div style="flex:1">
+              <div class="it-text">SD INPRES 01 MANADO</div>
+              <div class="it-year muted">Pendidikan Dasar</div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Hobbies -->
+      <div class="section" id="hobbies">
+        <h3>✨ Hobi & Minat</h3>
+        <div class="hobby-grid" style="margin-top:8px">
+          <div class="hobby" tabindex="0" title="Renang">
+            <img src="mtq.jpg" alt="Renang">
+            <div class="label">Membaca Quran</div>
+          </div>
+
+          <div class="hobby" tabindex="0" title="Membaca">
+            <img src="diecasttttt.jpg" alt="Membaca">
+            <div class="label">Mengoleksi diecast mobil</div>
+          </div>
+
+          </div>
+        </div>
+      </div>
+
+        <div style="margin-top:14px" class="contact-row">
+          <span class="chip">📍 Bandung, Indonesia</span>
+          <span class="chip">✉️ raffifatahilah56</span>
+          <span class="chip">📞 +62 895397341865</span>
+        </div>
+      </div>
+
+    </section>
+  </main>
+
+  <script>
+    // Download button -> trigger browser print (user can Save as PDF)
+    document.getElementById('downloadBtn').addEventListener('click', function(){
+      // optional: temporarily hide animations or header before print
+      window.print();
+    });
+
+    // Email button -> open default mail client
+    document.getElementById('emailBtn').addEventListener('click', function(){
+      window.location.href = 'mailto:samsudin@gmail.com?subject=Kontak%20dari%20CV&body=Halo%20Samsudin%2C%0A%0ASaya%20ingin%20menghubungi%20Anda.';
+    });
+
+    // small accessibility: allow Enter key on hobby cards to focus / announce
+    document.querySelectorAll('.hobby').forEach(el=>{
+      el.addEventListener('keydown', (e)=>{
+        if(e.key === 'Enter') el.click();
+      });
+      el.addEventListener('click', ()=>{
+        // lightweight "micro-interaction" - brief scale then back
+        el.animate([{transform:'scale(1.04)'},{transform:'scale(1)'}],{duration:220, easing:'ease-out'});
+      });
+    });
+  </script>
+
+</body>
+</html>
