@@ -43,7 +43,7 @@ header {
   padding: 22px 28px;
 }
 
-.brand {
+.brand { 
   display: flex;
   gap: 14px;
   align-items: center;
