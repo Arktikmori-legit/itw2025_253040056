@@ -562,6 +562,7 @@ body {
   gap: 15px; /* Jarak antar icon */
   margin-top: -70px;
   justify-content: center; /* rata kiri buat sesuai pas posisi teks */
+  background-color: #004d40;
 }
 
 .social-links a {

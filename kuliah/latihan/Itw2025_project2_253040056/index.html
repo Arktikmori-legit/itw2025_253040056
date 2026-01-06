@@ -18,33 +18,63 @@
     <link rel="stylesheet" href="css/style.css" />
   </head>
   <body>
-    <nav class="navbar">
-      <div class="container nav-container">
-        <div class="menu-toggle" id="mobile-menu">
-          <span class="bar"></span>
-          <span class="bar"></span>
-          <span class="bar"></span>
-        </div>
-        <ul class="nav-menu">
-          <li><a href="#home" class="nav-link">Home</a></li>
-          <li><a href="#about" class="nav-link">About</a></li>
-          <li><a href="#portfolio" class="nav-link">Projects</a></li>
-          <li><a href="#gallery" class="nav-link">Gallery</a></li>
-          <li>
-            <a href="#contact" class="nav-link btn-contact">Contact Me</a>
-          </li>
-        </ul>
-      </div>
-    </nav>
-
-   <section id="home" class="hero">
-  <div class="container hero-container">
-    <div class="hero-image">
-      <div class="img-box">
-        <img src="im/pop.jpeg" alt="Raffi Fatahilah" />
-      </div>
+<nav class="navbar navbar-expand-lg bg-body-secondary">
+  <div class="container-fluid">
+    <a class="navbar-brand" href="#home">Home</a>
+    <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+    <div class="collapse navbar-collapse" id="navbarSupportedContent">
+      <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+        <li class="nav-item">
+          <a class="nav-link active" aria-current="page" href="#about">tentang Kami</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="#produk">Etalase</a>
+        </li>
+        <li class="nav-item"></li>
+          <a class="nav-link active" href="#gallery" role="button" aria-expanded="false">
+            koleksi
+          </a>
+        </li>
+          <li class="nav-item">
+          <a class="nav-link active" href="#contact">Kontak Kami</a>
+        </li>
+      </ul>
+      <form class="d-flex" role="search">
+        <input class="form-control me-2" type="search" placeholder="Search" aria-label="Search"/>
+        <button class="btn btn-outline-success" type="submit">Search</button>
+      </form>
     </div>
+  </div>
+</nav>
 
+<section class="jumbotron">
+      <div id="carouselExampleAutoplaying" class="carousel slide" data-bs-ride="carousel">
+        <div class="carousel-indicators">
+          <button type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide-to="0" class="active" aria-current="true" aria-label="Slide 1"></button>
+          <button type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide-to="1" aria-label="Slide 2"></button>
+          <button type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide-to="2" aria-label="Slide 3"></button>
+        </div>
+        <div class="carousel-inner">
+          <div class="carousel-item active" data-bs-interval="2000">
+            <img src="img/mercy 1.jpg" class="d-block w-100" alt="sticky milk" />
+          </div>
+          <div class="carousel-item" data-bs-interval="2000">
+            <img src="img/mercy 2.jpg" class="d-block w-100" alt="cilok goang" />
+          </div>
+        </div>
+        <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleAutoplaying" data-bs-slide="prev">
+          <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+          <span class="visually-hidden">Previous</span>
+        </button>
+        <button class="carousel-control-next" type="button" data-bs-target="#carouselExampleAutoplaying" data-bs-slide="next">
+          <span class="carousel-control-next-icon" aria-hidden="true"></span>
+          <span class="visually-hidden">Next</span>
+        </button>
+      </div>
+    </section>
+<br>
     <div class="hero-text">
       <h1><span class="highlight">Arktikmori Diecast</span></h1>
       <h2>“More Than Diecast, It's a Legacy.”</h2>
@@ -74,143 +104,93 @@ Dengan mengedepankan profesionalisme, kepercayaan, dan pelayanan personal yang e
       </div>
     </section>
 
-    <section id="produk" class="section">
+<section id="produk" class="section">
       <div class="container">
         <div class="section-header">
           <h2 class="title">PRODUK KAMI</h2>
         </div>
-
-<div class="grid-layout">
-            
-            <div class="card">
-                <div class="card-image">
-                    <img src="img/Jualan 1.jpeg" alt="Porsche 935" />
-                    <div class="overlay">
-                        <a href="https://github.com/Arktikmori-legit/itw2025_253040056/blob/main/kuliah/latihan/Latihan4/t4b253040056.html" class="icon-btn" target="_blank"><i class="fa-solid fa-link"></i></a>
-                    </div>
-                </div>
-                <div class="card-content">
-                    <h3>Hotwheels</h3>
-                    <p>Porsche 935 Hotwheels</p>
-                    <span class="badge">Klik Gambar</span>
-                </div>
-            </div>
-
-            <div class="card">
-                <div class="card-image">
-                    <img src="img/jualan 2.jpeg" alt="Porsche Panamera" />
-                    <div class="overlay">
-                        <a href="https://id.shp.ee/V4PhSL2" class="icon-btn" target="_blank"><i class="fa-solid fa-link"></i></a>
-                    </div>
-                </div>
-                <div class="card-content">
-                    <h3>Hotwheels</h3>
-                    <p>Porsche Panamera Hot Wheels</p>
-                    <span class="badge">Klik Gambar</span>
-                </div>
-            </div>
-
-            <div class="card">
-                <div class="card-image">
-                    <img src="img/jualan 3.jpeg" alt="Bugatti Bolide" />
-                    <div class="overlay">
-                        <a href="https://id.shp.ee/iAN6rL8" class="icon-btn" target="_blank"><i class="fa-solid fa-link"></i></a>
-                    </div>
-                </div>
-                <div class="card-content">
-                    <h3>Hotwheels</h3>
-                    <p>Buggati Bolide Hot Wheels</p>
-                    <span class="badge">Klik Gambar</span>
-                </div>
-            </div>
-
-            <div class="card">
-                <div class="card-image">
-                    <img src="img/jualan 4.jpeg" alt="Lamborghini Gallardo" />
-                    <div class="overlay">
-                        <a href="https://id.shp.ee/ukBYyJa" class="icon-btn" target="_blank"><i class="fa-solid fa-link"></i></a>
-                    </div>
-                </div>
-                <div class="card-content">
-                    <h3>Hotwheels</h3>
-                    <p>Lamborghini Gallardo Hot wheels</p>
-                    <span class="badge">Klik Gambar</span>
-                </div>
-            </div>
-
-             <div class="card">
-                <div class="card-image">
-                    <img src="img/jualan 5.jpeg" alt="Lamborghini Essenza" />
-                    <div class="overlay">
-                        <a href="https://id.shp.ee/rtEgiKa" class="icon-btn" target="_blank"><i class="fa-solid fa-link"></i></a>
-                    </div>
-                </div>
-                <div class="card-content">
-                    <h3>Hotwheels</h3>
-                    <p>Lamborghini Essenza Scv12 Hot Wheels</p>
-                    <span class="badge">Klik Gambar</span>
-                </div>
-            </div>
-
-            <div class="card">
-                <div class="card-image">
-                    <img src="img/jualan 6.jpeg" alt="Tugas Artikel" />
-                    <div class="overlay">
-                        <a href="https://github.com/Arktikmori-legit/itw2025_253040056/blob/main/kuliah/latihan/Latihan4/t4b253040056.html" class="icon-btn" target="_blank"><i class="fa-solid fa-link"></i></a>
-                    </div>
-                </div>
-                <div class="card-content">
-                    <h3>Tugas ITW 4</h3>
-                    <p>Membuat Artikel berita Menggunakan HTML dan CSS.</p>
-                    <span class="badge">Lihat Tugas</span>
-                </div>
-            </div>
-
-            <div class="card">
-                <div class="card-image">
-                    <img src="img/jualan 9.jpeg" alt="Tugas Website" />
-                    <div class="overlay">
-                        <a href="https://github.com/Arktikmori-legit/itw2025_253040056/blob/main/kuliah/latihan/Latihan5/t5a253040056.html" class="icon-btn" target="_blank"><i class="fa-solid fa-link"></i></a>
-                    </div>
-                </div>
-                <div class="card-content">
-                    <h3>Tugas ITW 5</h3>
-                    <p>Membuat Website Menggunakan HTML dan CSS.</p>
-                    <span class="badge">Lihat Tugas</span>
-                </div>
-            </div>
-
-            <div class="card">
-                <div class="card-image">
-                    <img src="img/jualan 7.jpeg" alt="Item Tambahan 1" />
-                    <div class="overlay">
-                        <a href="#" class="icon-btn" target="_blank"><i class="fa-solid fa-link"></i></a>
-                    </div>
-                </div>
-                <div class="card-content">
-                    <h3>Koleksi Tambahan</h3>
-                    <p>Deskripsi untuk item tambahan nomor 8.</p>
-                    <span class="badge">Klik Gambar</span>
-                </div>
-            </div>
-
-            <div class="card">
-                <div class="card-image">
-                    <img src="img/jualan 8.jpeg" alt="Item Tambahan 2" />
-                    <div class="overlay">
-                        <a href="#" class="icon-btn" target="_blank"><i class="fa-solid fa-link"></i></a>
-                    </div>
-                </div>
-                <div class="card-content">
-                    <h3>Koleksi Tambahan</h3>
-                    <p>Deskripsi untuk item tambahan nomor 9.</p>
-                    <span class="badge">Klik Gambar</span>
-                </div>
-            </div>
-
-        </div>
+    <div class="grid-layout">
+    <div class="card">
+      <img src="img/Jualan 1.jpeg" class="card-img-top" alt="...">
+      <div class="card-body">
+        <h5 class="card-title">Hot Wheels Porsche 935</h5>
+        <p class="card-text">Hotwheel Premium yang di desain dengan ban karet serta base besi</p>
+        <a href="https://id.shp.ee/CtJ3Wnv." class="btn btn-primary">Pesan Sekarang</a>
       </div>
-    </section>
+    </div>
+    <div class="card">
+      <img src="img/jualan 2.jpeg" class="card-img-top" alt="...">
+
+      <div class="card-body">
+        <h5 class="card-title">Hot Wheels Porsche Panamera</h5>
+        <p class="card-text">Hotwheel Premium yang di desain dengan ban karet serta base besi</p>
+        <a href="https://id.shp.ee/V4PhSL2" class="btn btn-primary">Pesan Sekarang</a>
+      </div>
+    </div>
+    <div class="card">
+      <img src="img/jualan 3.jpeg" class="card-img-top" alt="...">
+
+      <div class="card-body">
+        <h5 class="card-title">Hot Wheels Buggati Bolide</h5>
+        <p class="card-text">Hotwheel Premium yang di desain dengan ban karet serta base besi</p>
+        <a href="https://id.shp.ee/iAN6rL8" class="btn btn-primary">Pesan Sekarang</a>
+      </div>
+    </div>
+    <div class="card">
+      <img src="img/jualan 4.jpeg" class="card-img-top" alt="...">
+
+      <div class="card-body">
+        <h5 class="card-title">Hot Wheels Lamborghini Gallardo</h5>
+        <p class="card-text">Hotwheel Premium yang di desain dengan ban karet serta base besi</p>
+        <a href="https://id.shp.ee/ukBYyJa" class="btn btn-primary">Pesan Sekarang</a>
+      </div>
+    </div>
+    <div class="card">
+      <img src="img/jualan 5.jpeg" class="card-img-top" alt="...">
+
+      <div class="card-body">
+        <h5 class="card-title">Hot Wheels Lamborghini Essenza Scv12</h5>
+        <p class="card-text">Hotwheel Premium yang di desain dengan ban karet serta base besi</p>
+        <a href="https://id.shp.ee/rtEgiKa" class="btn btn-primary">Pesan Sekarang</a>
+      </div>
+    </div>
+    <div class="card">
+      <img src="img/jualan 6.jpeg" class="card-img-top" alt="...">
+
+      <div class="card-body">
+        <h5 class="card-title">Hot Wheels Porsche Lemans</h5>
+        <p class="card-text">Hotwheel Premium yang di desain dengan ban karet serta base besi</p>
+        <a href="https://id.shp.ee/pyz4DnM" class="btn btn-primary">Pesan Sekarang</a>
+      </div>
+    </div>
+    <div class="card">
+      <img src="img/jualan 7.jpeg" class="card-img-top" alt="...">
+
+      <div class="card-body">
+        <h5 class="card-title">Hot Wheels Ferrari Testarossa</h5>
+        <p class="card-text">Hotwheel Premium yang di desain dengan ban karet serta base besi</p>
+        <a href="https://id.shp.ee/8XBmD1a" class="btn btn-primary">Pesan Sekarang</a>
+      </div>
+    </div>
+    <div class="card">
+      <img src="img/jualan 8.jpeg" class="card-img-top" alt="...">
+
+      <div class="card-body">
+        <h5 class="card-title">Hot Wheels ferrari Enzo</h5>
+        <p class="card-text">Hotwheel Premium yang di desain dengan ban karet serta base besi</p>
+        <a href="https://id.shp.ee/yA366ji" class="btn btn-primary">Pesan Sekarang</a>
+      </div>
+    </div>
+    <div class="card">
+      <img src="img/jualan 9.jpeg" class="card-img-top" alt="...">
+
+      <div class="card-body">
+        <h5 class="card-title">Hot Wheels Lamborghini Svj</h5>
+        <p class="card-text">Hotwheel Premium yang di desain dengan ban karet serta base besi</p>
+        <a href="https://id.shp.ee/yA366ji" class="btn btn-primary">Pesan Sekarang</a>
+      </div>
+    </div>
+</section>
 
     <section id="gallery" class="section">
       <div class="container">
@@ -247,29 +227,24 @@ Dengan mengedepankan profesionalisme, kepercayaan, dan pelayanan personal yang e
       </div>
     </section>
 
-    <section id="contact" class="section bg-dark">
-      <div class="container contact-container">
+    <section id="contact" class="section">
+      <div class="contact-container">
         <div class="contact-info">
           <h2 class="title">KONTAK</h2>
           <p>
-            Jika anda tertarik berkolaborasi atau sekadar berbincang ringan
-            tentang Web Development dan Diecast berbagai merk? Hubungi saya.
+            Kami menjual Diecast selain melalui Shoppe, bisa melalui direct Facebook Pandem Impala, Hubungi kontak kami untuk pemesanan terpisah     
           </p>
           <br />
           </div>
 
-
           <div class="social-links">
-            <a href="https://github.com/Arktikmori-legit"
-              ><i class="fa-brands fa-github"></i
-            ></a>
             <a href="https://www.instagram.com/dunde_niel?igsh=eGUyY3pkamxhdXo3"
               ><i class="fa-brands fa-instagram"></i
             ></a>
             <a href="https://maps.app.goo.gl/ZiPkCToLv3ABeL1HA" target="_blank"
               ><i class="fa-solid fa-location"></i
             ></a>
-             <a href="mailto:raffifatahilah56@gmail.com" target="_blank"
+             <a href="mailto:arktikmoridiecast@gmail.com" target="_blank"
               ><i class="fa-solid fa-envelope"></i
             ></a>
           </div>
